@@ -1,0 +1,19 @@
+esxi_address: 10.168.0.10
+esxi_username: root
+esxi_password: P@ssword01
+esxi_fqdn: gate.nelabs.com.au
+esxi_datastore: datastore1
+ubuntu_iso: "Ubuntu.ISO"
+url_iso_url: "https://releases.ubuntu.com/18.04/ubuntu-18.04.5-live-server-amd64.iso"
+
+vm_name: demo
+vm_disk_gb: 40
+vm_memory_mb: 2048
+vm_num_cpus: 2
+vm_network: "VM Network"
+vm_password_old: Changeme!
+vm_password_new: Welcom@987
+vm_address: 10.168.0.10
+vm_netmask_cidr: 24
+vm_gateway: 10.168.0.1
+vm_dns_server: 10.168.0.1
