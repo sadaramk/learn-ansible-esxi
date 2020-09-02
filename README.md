@@ -1,5 +1,5 @@
-# learn-ansible-esxi
-Repo to learn ansible esxi management
+# setup-esxi-homelab
+Repo to setup homelab using vmware esxi.
 
 # Ping Test
 sudo ansible all -m ping --ask-become-pass
