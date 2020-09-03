@@ -1,0 +1,11 @@
+#Terraform
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+
+# Step 1 - Profivion Infra
+Step_1_Provision_Infra/.terraform
+Step_1_Provision_Infra/terraform.tfstate
+Step_1_Provision_Infra/terraform.tfstate.backup
+Step_1_Provision_Infra/.terraform.tfstate.lock.info
