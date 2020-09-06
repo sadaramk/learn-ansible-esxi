@@ -4,8 +4,13 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform.tfstate.lock.info
 
+# Step 0 - Packer Installation
+packer_esxi_ubuntu/variables.json
+packer_esxi_ubuntu/packer_cache/*
+packer_esxi_ubuntu/preseed.cfg
+
 # Step 1 - Profivion Infra
-Step_1_Provision_Infra/.terraform
-Step_1_Provision_Infra/terraform.tfstate
-Step_1_Provision_Infra/terraform.tfstate.backup
-Step_1_Provision_Infra/.terraform.tfstate.lock.info
+terraform_esxi_ubuntu/.terraform
+terraform_esxi_ubuntu/terraform.tfstate
+terraform_esxi_ubuntu/terraform.tfstate.backup
+terraform_esxi_ubuntu/.terraform.tfstate.lock.info

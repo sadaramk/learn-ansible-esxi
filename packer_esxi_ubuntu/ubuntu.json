@@ -1,0 +1,68 @@
+{
+  "builders": [
+    {
+      "type": "vmware-iso",
+
+      "remote_datastore": "{{user  `datastore`}}",
+      "remote_host": "{{user  `esxi-host`}}",
+      "remote_username": "{{user  `esxi-username`}}",
+      "remote_password": "{{user  `esxi-password`}}",
+      "remote_type": "esx5",
+
+
+
+      "floppy_files": ["./preseed.cfg"],
+      "boot_command": [
+        "<enter><wait><f6><wait><esc><wait>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs>",
+        "/install/vmlinuz",
+        " initrd=/install/initrd.gz",
+        " priority=critical",
+        " locale=en_US",
+        " file=/media/preseed.cfg",
+        "<enter>"
+      ],
+      "boot_wait": "10s",
+      "cpus": 2,
+      "disk_size": 20140,
+      "disk_type_id": "zeroedthick",
+      "format": "vmx",
+      "guest_os_type": "ubuntu-64",
+      "headless": true,
+      "iso_checksum": "{{user `iso-checksum`}}",
+      "iso_urls": "{{user `iso-url`}}",
+      "keep_registered": true,
+      "memory": "{{user `vm-mem-size`}}",
+      "name": "Ubuntu-19.04",
+
+      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vargant'|sudo -S sh 'shutdown.sh'",
+      "skip_compaction": true,
+      "skip_export": true,
+      "ssh_password": "{{user `guest-ssh-pwd`}}",
+      "ssh_port": 22,
+      "ssh_timeout": "20m",
+      "ssh_username": "{{user `guest-ssh`}}",
+      "tools_upload_flavor": "linux",
+
+      "vm_name": "Ubuntu-19.04",
+
+      "vnc_disable_password": true,
+      "vmx_data": {
+        "ethernet0.virtualDev": "vmxnet3",
+        "ethernet0.networkName": "VM Network",
+        "ethernet0.addressType": "generated",
+        "ethernet0.wakeOnPcktRcv": "FALSE",
+        "ethernet0.uptCompatibility": "TRUE",
+        "ethernet0.present": "TRUE"
+      }
+    }
+  ]
+}
